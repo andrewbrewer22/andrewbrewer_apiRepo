@@ -5,7 +5,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CS321_W2D2_StudentAPI.Services;
+//using CS321_W2D2_StudentAPI.Services;
 //>>>>>>> parent of db1c480... update to netcoreapp3.1
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -34,7 +34,7 @@ namespace CS321_W2D2_StudentAPI
             services.AddMvc();
             services.AddSingleton<StudentsService>();
 //=======
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             // configure IStudentService for injection
 //>>>>>>> parent of db1c480... update to netcoreapp3.1
         }
