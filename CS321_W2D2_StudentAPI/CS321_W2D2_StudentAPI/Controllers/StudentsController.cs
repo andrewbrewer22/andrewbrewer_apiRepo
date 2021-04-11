@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using CS321_W2D2_StudentAPI.Models;
 using CS321_W2D2_StudentAPI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -46,7 +47,16 @@ namespace CS321_W2D2_StudentAPI.Controllers
         public IActionResult Post([FromBody] Student newStudent)
         {
             // add the new student
-            _studentsService.Add(newStudent);
+            try
+            {
+                _studentsService.Add(newStudent);
+            }
+            catch(Exception exc)
+            {
+                ModelState.AddModelError("Post", exc.Message);
+                return BadRequest(ModelState);
+            }
+            
 
             // return a 201 Created status. This will also add a "location" header
             // with the URI of the new student. E.g., /api/students/99, if the new is 99

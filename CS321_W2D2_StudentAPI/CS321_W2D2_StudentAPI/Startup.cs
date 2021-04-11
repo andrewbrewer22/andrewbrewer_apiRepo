@@ -1,12 +1,8 @@
-//<<<<<<< HEAD
 ﻿using CS321_W2D2_StudentAPI.Services;
-//=======
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-//using CS321_W2D2_StudentAPI.Services;
-//>>>>>>> parent of db1c480... update to netcoreapp3.1
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,7 +27,7 @@ namespace CS321_W2D2_StudentAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddSingleton<StudentsService>();
+            services.AddSingleton<IStudentsService, StudentsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
