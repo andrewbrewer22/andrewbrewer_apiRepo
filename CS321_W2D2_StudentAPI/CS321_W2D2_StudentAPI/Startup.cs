@@ -30,13 +30,8 @@ namespace CS321_W2D2_StudentAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-//<<<<<<< HEAD
             services.AddMvc();
             services.AddSingleton<StudentsService>();
-//=======
-            //services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            // configure IStudentService for injection
-//>>>>>>> parent of db1c480... update to netcoreapp3.1
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +48,8 @@ namespace CS321_W2D2_StudentAPI
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseRouting();
+            app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }
 }

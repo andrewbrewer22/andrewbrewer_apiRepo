@@ -12,7 +12,7 @@ namespace CS321_W2D2_StudentAPI.Controllers
         private readonly IStudentsService _studentsService;
 
         // Constructor
-        public StudentsController(StudentsService studentsService)
+        public StudentsController(IStudentsService studentsService)
         {
             // HINT: keep a reference to the incoming service
             _studentsService = studentsService;
